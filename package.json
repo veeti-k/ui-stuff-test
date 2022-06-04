@@ -1,0 +1,26 @@
+{
+  "name": "ui-components-test",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "buildprod": "turbo run buildprod",
+    "start": "turbo run start",
+    "dev": "turbo run dev",
+    "clean": "turbo run clean",
+    "postclean": "rm -rf node_modules"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@1.22.19"
+}

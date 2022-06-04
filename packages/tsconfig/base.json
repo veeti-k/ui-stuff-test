@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "composite": false,
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+
+    "strict": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "useUnknownInCatchVariables": false,
+
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true
+  },
+  "exclude": ["node_modules"]
+}
