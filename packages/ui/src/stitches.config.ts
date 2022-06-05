@@ -1,68 +1,53 @@
 import {
   blackA,
-  blue,
-  blueDark,
-  gray,
-  grayDark,
-  green,
-  greenDark,
+  grass,
+  grassDark,
   red,
   redDark,
   slate,
   whiteA,
-  blueA,
-  blueDarkA,
+  gray,
+  grayDark,
+  blue,
+  blueDark,
 } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export const { styled, css, globalCss, getCssText, createTheme } = createStitches({
   theme: {
     colors: {
-      ...gray,
       ...blue,
-      ...blueA,
+      ...gray,
       ...red,
-      ...green,
+      ...grass,
       ...slate,
       ...blackA,
       ...whiteA,
       hiContrast: "$slate12",
-      loContrast: "white",
+      loContrast: "$slate1",
     },
+  },
+  media: {
+    hover: "(any-hover: hover)",
   },
 });
 
 export const darkTheme = createTheme("dark", {
   colors: {
-    ...grayDark,
     ...blueDark,
-    ...blueDarkA,
+    ...grayDark,
     ...redDark,
-    ...greenDark,
+    ...grassDark,
     ...slate,
     ...blackA,
     ...whiteA,
-    hiContrast: "$slate12",
-    loContrast: "$slate1",
+    hiContrast: "$slate1",
+    loContrast: "$slate12",
   },
 });
 
 globalCss({
-  "*": {
-    fontFamily: `"Roboto", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif`,
-  },
-
-  body: {
-    // margin: 0,
-    // padding: 0,
-  },
-
   "html.dark": {
     background: "$gray1",
-  },
-
-  html: {
-    transition: "background 0.5s ease-in-out",
-    "-webkit-font-smoothing": "antialiased",
   },
 })();

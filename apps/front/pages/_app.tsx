@@ -2,6 +2,8 @@ import { ThemeProvider } from "next-themes";
 import { AppProps } from "next/app";
 import { darkTheme } from "ui";
 
+import "../globalCss.css";
+
 const CustomApp = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider
     defaultTheme="system"

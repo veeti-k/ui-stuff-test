@@ -1,2 +1,3 @@
 export * from "./stitches.config";
-export * from "./Button";
+export * from "./Button/Button";
+export * from "./Button/ButtonGroup";
