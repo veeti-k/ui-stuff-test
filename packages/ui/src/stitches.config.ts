@@ -29,9 +29,6 @@ export const { styled, css, globalCss, getCssText, createTheme } = createStitche
       hiContrast: "$slate12",
       loContrast: "white",
     },
-    transitions: {
-      default: "all 0.2s ease-in-out",
-    },
   },
 });
 
@@ -66,5 +63,6 @@ globalCss({
 
   html: {
     transition: "background 0.5s ease-in-out",
+    "-webkit-font-smoothing": "antialiased",
   },
 })();
