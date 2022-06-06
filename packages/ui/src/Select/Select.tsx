@@ -4,6 +4,7 @@ import {
   SelectContent,
   SelectIcon,
   SelectRoot,
+  SelectScrollDownButton,
   SelectScrollUpButton,
   SelectTrigger,
   SelectValue,
@@ -13,10 +14,11 @@ import { FlexDiv } from "../FlexDiv";
 
 interface Props {
   children: React.ReactNode;
+  defaultValue?: string;
 }
 
-export const Select = ({ children }: Props) => (
-  <SelectRoot defaultValue="test">
+export const Select = ({ children, defaultValue }: Props) => (
+  <SelectRoot defaultValue={defaultValue}>
     <SelectTrigger>
       <FlexDiv gap05>
         <SelectValue />
@@ -33,9 +35,9 @@ export const Select = ({ children }: Props) => (
 
       <SelectViewport>{children}</SelectViewport>
 
-      <SelectScrollUpButton>
-        <ChevronUpIcon />
-      </SelectScrollUpButton>
+      <SelectScrollDownButton>
+        <ChevronDownIcon />
+      </SelectScrollDownButton>
     </SelectContent>
   </SelectRoot>
 );

@@ -22,8 +22,12 @@ const Home: NextPage = () => {
       </Dialog>
 
       <div>
-        <Select>
-          <Option value="test">test</Option>
+        <Select defaultValue={"test" + 1}>
+          {Array(20)
+            .fill(0)
+            .map((_, i) => (
+              <Option value={"test" + i}>test-{i}</Option>
+            ))}
         </Select>
       </div>
     </div>

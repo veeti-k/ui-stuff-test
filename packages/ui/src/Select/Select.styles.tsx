@@ -25,9 +25,8 @@ const scrollButtonStyles = {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  height: 25,
-  backgroundColor: "white",
-  color: violet.violet11,
+  padding: "0.6rem 0.7rem",
+  color: "$hiContrast",
   cursor: "default",
 };
 
