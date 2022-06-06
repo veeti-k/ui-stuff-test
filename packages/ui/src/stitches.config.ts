@@ -13,7 +13,7 @@ import {
 } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
-export const { styled, css, globalCss, getCssText, createTheme } = createStitches({
+export const { styled, css, keyframes, globalCss, getCssText, createTheme } = createStitches({
   theme: {
     colors: {
       ...blue,
@@ -26,9 +26,13 @@ export const { styled, css, globalCss, getCssText, createTheme } = createStitche
       hiContrast: "$slate12",
       loContrast: "$slate1",
     },
+    transitions: {
+      default: "all 0.2s ease-in-out",
+    },
   },
   media: {
     hover: "(any-hover: hover)",
+    motionOk: "(prefers-reduced-motion: no-preference)",
   },
 });
 

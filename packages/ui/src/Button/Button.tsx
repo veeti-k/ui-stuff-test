@@ -8,9 +8,10 @@ export const Button = styled("button", {
   color: "$hiContrast",
 
   borderRadius: "8px",
-  padding: "0.7rem",
+  padding: "0.6rem 0.7rem",
 
   transition: "all 0.2s ease-in-out",
+  "-webkit-tap-highlight-color": "transparent",
 
   "&:focus-visible": {
     outline: "none",
