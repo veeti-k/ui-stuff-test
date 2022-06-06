@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import { useTheme } from "next-themes";
-import { Button, Input, PasswordInput, Dialog, Option } from "ui";
-import { Select } from "ui";
+import { Button, Input, PasswordInput, Dialog, Option, AlertDialog, Select } from "ui";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
@@ -20,6 +19,13 @@ const Home: NextPage = () => {
         <Input required label="Password" error={"test"} />
         <Input required label="Password" error={"test"} />
       </Dialog>
+
+      <AlertDialog
+        action={<Button red>Action</Button>}
+        cancel={<Button>Cancel</Button>}
+        title="Title"
+        trigger={<Button>Open alert dialog</Button>}
+      />
 
       <div>
         <Select defaultValue={"test" + 1}>

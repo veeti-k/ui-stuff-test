@@ -9,6 +9,7 @@ export * from "./Input/PasswordInput/PasswordInput";
 export * from "./Tooltip/Tooltip";
 
 export * from "./Dialog/Dialog";
+export * from "./AlertDialog/AlertDialog";
 
 export * from "./Select/Select";
 export * from "./Select/Option";
