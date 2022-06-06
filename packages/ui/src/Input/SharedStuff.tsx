@@ -13,8 +13,10 @@ export const StyledInput = styled("input", {
   borderRadius: 8,
   border: "1px solid $colors$gray7",
 
-  "&:hover": {
-    borderColor: "$colors$gray9",
+  "@hover": {
+    "&:hover": {
+      borderColor: "$colors$gray9",
+    },
   },
 
   "&:focus": {
@@ -34,8 +36,10 @@ export const StyledInput = styled("input", {
       true: {
         borderColor: "$tomato8",
 
-        "&:hover": {
-          borderColor: "$colors$tomato9",
+        "@hover": {
+          "&:hover": {
+            borderColor: "$colors$tomato9",
+          },
         },
 
         "&:focus": {
