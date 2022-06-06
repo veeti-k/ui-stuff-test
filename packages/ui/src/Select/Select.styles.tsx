@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { styled } from "../stitches.config";
-import { mauve, violet } from "@radix-ui/colors";
+import { violet } from "@radix-ui/colors";
 import { Button } from "../Button/Button";
 
 const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {

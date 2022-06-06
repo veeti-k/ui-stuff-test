@@ -10,7 +10,6 @@ import {
   SelectViewport,
 } from "./Select.styles";
 import { FlexDiv } from "../FlexDiv";
-import { Option } from "./Option";
 
 interface Props {
   children: React.ReactNode;
