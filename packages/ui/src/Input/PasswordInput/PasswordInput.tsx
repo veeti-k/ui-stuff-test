@@ -21,7 +21,11 @@ export const PasswordInput = ({ label, required, id, error, ...props }: InputPro
             {label}
           </Label>
 
-          {!!error && <Label red>{error}</Label>}
+          {!!error && (
+            <Label htmlFor={innerId} red>
+              {error}
+            </Label>
+          )}
         </FlexDiv>
       )}
 

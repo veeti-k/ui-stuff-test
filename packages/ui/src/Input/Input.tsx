@@ -14,7 +14,11 @@ export const Input = ({ label, required, id, error, ...props }: InputProps) => {
           {label}
         </Label>
 
-        {!!error && <Label red>{error}</Label>}
+        {!!error && (
+          <Label htmlFor={innerId} red>
+            {error}
+          </Label>
+        )}
       </FlexDiv>
 
       <StyledInput invalid={!!error} id={innerId} required={required} {...props} />
