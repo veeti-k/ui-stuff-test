@@ -8,6 +8,8 @@ const StyledLabel = styled(RadixLabel.Root, {
   fontSize: "14px",
   color: "$hiContrast",
 
+  transition: "$default",
+
   variants: {
     red: {
       true: {

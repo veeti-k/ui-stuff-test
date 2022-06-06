@@ -10,7 +10,7 @@ export const Button = styled("button", {
   borderRadius: "8px",
   padding: "0.6rem 0.7rem",
 
-  transition: "all 0.2s ease-in-out",
+  transition: "$default",
   "-webkit-tap-highlight-color": "transparent",
 
   "&:focus-visible": {
