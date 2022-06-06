@@ -1,26 +1,23 @@
 import * as React from "react";
-import { styled } from "../stitches.config";
+import { useRandomId } from "hooks";
+import { FlexDiv } from "../FlexDiv";
+import { Label } from "../Label/Label";
+import { InputProps, StyledInput } from "./SharedStuff";
 
-export const Input = styled("input", {
-  all: "unset",
+export const Input = ({ label, required, id, error, ...props }: InputProps) => {
+  const innerId = useRandomId(id);
 
-  transition: "$default",
+  return (
+    <FlexDiv column gap05 fullHeight>
+      <FlexDiv justifyBetween alignCenter>
+        <Label htmlFor={innerId} required={required}>
+          {label}
+        </Label>
 
-  padding: "0 0.5rem",
-  fontSize: "16px",
+        {!!error && <Label red>{error}</Label>}
+      </FlexDiv>
 
-  color: "$hiContrast",
-
-  borderRadius: 8,
-  border: "1px solid $colors$gray7",
-
-  "&:hover": {
-    borderColor: "$colors$gray9",
-  },
-
-  "&:focus": {
-    outline: "none",
-    boxShadow: `0 0 0 3px $colors$blue7`,
-    borderColor: "$colors$gray9",
-  },
-});
+      <StyledInput invalid={!!error} id={innerId} required={required} {...props} />
+    </FlexDiv>
+  );
+};

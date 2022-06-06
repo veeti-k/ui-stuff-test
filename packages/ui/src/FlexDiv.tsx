@@ -44,6 +44,11 @@ export const FlexDiv = styled("div", {
         justifyContent: "center",
       },
     },
+    justifyBetween: {
+      true: {
+        justifyContent: "space-between",
+      },
+    },
     justifyStart: {
       true: {
         justifyContent: "flex-start",
