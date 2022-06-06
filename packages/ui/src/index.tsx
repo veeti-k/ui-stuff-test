@@ -7,3 +7,5 @@ export * from "./Input/Input";
 export * from "./Input/PasswordInput/PasswordInput";
 
 export * from "./Tooltip/Tooltip";
+
+export * from "./Dialog/Dialog";

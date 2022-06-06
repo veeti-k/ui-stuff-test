@@ -53,6 +53,8 @@ export const Button = styled("button", {
     },
     subtle: {
       true: {
+        border: "unset",
+
         "@hover": {
           "&:hover": {
             backgroundColor: "$gray3",
