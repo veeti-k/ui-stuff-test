@@ -10,7 +10,6 @@ export const StyledSelectOption = styled(SelectPrimitive.Item, {
   alignItems: "center",
   padding: "0.6rem 0.7rem",
   userSelect: "none",
-  transition: "$default",
   position: "relative",
 
   "&:focus": {
