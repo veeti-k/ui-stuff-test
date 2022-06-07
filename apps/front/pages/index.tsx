@@ -1,11 +1,26 @@
 import type { NextPage } from "next";
 import { useTheme } from "next-themes";
-import { Button, Input, PasswordInput, Dialog, Option, AlertDialog, Select } from "ui";
+import {
+  Button,
+  Input,
+  PasswordInput,
+  Dialog,
+  Option,
+  AlertDialog,
+  Select,
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRightSlot,
+  DropdownMenuSeparator,
+  DropdownMenuItem,
+} from "ui";
 
 const Home: NextPage = () => {
   const { theme, setTheme } = useTheme();
 
   const nextTheme = theme === "dark" ? "light" : "dark";
+
+  const darkTheme = theme === "dark";
 
   return (
     <div style={{ display: "flex", gap: "1rem", margin: "1rem", flexDirection: "column" }}>
@@ -32,9 +47,23 @@ const Home: NextPage = () => {
           {Array(20)
             .fill(0)
             .map((_, i) => (
-              <Option value={"test" + i}>test-{i}</Option>
+              <Option key={i} value={"test" + i}>
+                test-{i}
+              </Option>
             ))}
         </Select>
+      </div>
+
+      <div>
+        <DropdownMenu trigger={<Button>Open dropdown menu</Button>}>
+          <DropdownMenuCheckboxItem checked={darkTheme}>
+            Tumma tila <DropdownMenuRightSlot>CTRL+J</DropdownMenuRightSlot>
+          </DropdownMenuCheckboxItem>
+
+          <DropdownMenuSeparator />
+
+          <DropdownMenuItem>Kirjaudu ulos</DropdownMenuItem>
+        </DropdownMenu>
       </div>
     </div>
   );
