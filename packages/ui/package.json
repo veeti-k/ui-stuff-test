@@ -8,14 +8,16 @@
     "dist/**"
   ],
   "scripts": {
+    "dev": "tsc-watch --noClear",
     "build": "rm -rf dist && ./node_modules/.bin/tsc -p ./tsconfig.json",
     "buildprod": "rm -rf dist && ./node_modules/.bin/tsc -p ./tsconfig.json",
-    "dev": "tsup src/index.tsx --watch --dts --external react",
     "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf dist"
   },
   "dependencies": {
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-alert-dialog": "^0.1.7",
+    "@radix-ui/react-checkbox": "^0.1.5",
+    "@radix-ui/react-context-menu": "^0.1.6",
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-dropdown-menu": "^0.1.6",
     "@radix-ui/react-icons": "^1.1.1",
@@ -23,7 +25,8 @@
     "@radix-ui/react-select": "^0.1.1",
     "@radix-ui/react-tooltip": "^0.1.7",
     "@stitches/react": "^1.2.8",
-    "hooks": "*"
+    "hooks": "*",
+    "tabler-icons-react": "^1.48.1"
   },
   "devDependencies": {
     "@types/react": "18.0.10",
@@ -31,7 +34,6 @@
     "react": "18.1.0",
     "tsc-watch": "^5.0.3",
     "tsconfig": "*",
-    "tsup": "^6.0.1",
-    "typescript": "^4.6.3"
+    "typescript": "^4.7.3"
   }
 }

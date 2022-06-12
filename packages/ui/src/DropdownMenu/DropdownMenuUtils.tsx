@@ -1,6 +1,7 @@
 import * as React from "react";
 import { CheckIcon } from "@radix-ui/react-icons";
-import { DropdownMenuItemIndicator, StyledCheckboxItem } from "./DropdownMenu";
+import { DropdownMenuItemIndicator } from "./DropdownMenu";
+import { StyledCheckboxItem } from "./DropdownMenu.styles";
 
 export const DropdownMenuCheckboxItem = ({
   children,

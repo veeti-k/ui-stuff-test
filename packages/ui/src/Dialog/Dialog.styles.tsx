@@ -16,6 +16,9 @@ const StyledOverlay = styled(DialogPrimitive.Overlay, {
   backgroundColor: "$blackA10",
   position: "fixed",
   inset: 0,
+
+  zIndex: 3,
+
   "@motionOk": {
     animation: `${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards`,
   },
@@ -31,8 +34,13 @@ const StyledContent = styled(DialogPrimitive.Content, {
   transform: "translate(-50%, -50%)",
   width: "90vw",
   maxWidth: "450px",
-  maxHeight: "85vh",
+  maxHeight: "90vh",
   padding: "1rem",
+
+  zIndex: 4,
+
+  overflow: "auto",
+
   "@motionOk": {
     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1) forwards`,
   },
@@ -43,32 +51,17 @@ interface ContentProps {
   children: React.ReactNode;
 }
 
-function Content({ children, ...props }: ContentProps) {
+const Content = ({ children, ...props }: ContentProps) => {
   return (
     <DialogPrimitive.Portal>
       <StyledOverlay />
       <StyledContent {...props}>{children}</StyledContent>
     </DialogPrimitive.Portal>
   );
-}
-
-const StyledTitle = styled(DialogPrimitive.Title, {
-  margin: 0,
-  fontWeight: "bold",
-  color: "$hiContrast",
-  fontSize: 18,
-});
-
-const StyledDescription = styled(DialogPrimitive.Description, {
-  margin: "10px 0 20px",
-  color: "$hiContrast",
-  fontSize: 15,
-  lineHeight: 1.5,
-});
+};
 
 export const DialogRoot = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 export const DialogContent = Content;
-export const DialogTitle = StyledTitle;
-export const DialogDescription = StyledDescription;
-export const DialogClose = DialogPrimitive.Close;
+export const DialogTitle = DialogPrimitive.Title;
+export const DialogDescription = DialogPrimitive.Description;

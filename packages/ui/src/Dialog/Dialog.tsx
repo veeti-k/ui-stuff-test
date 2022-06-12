@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import {
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogRoot,
@@ -10,26 +9,25 @@ import {
 } from "./Dialog.styles";
 import { FlexDiv } from "../FlexDiv";
 import { Button } from "../Button/Button";
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 
-interface DialogProps {
-  title: string;
-  description?: string;
+interface DialogProps extends React.ComponentProps<typeof DialogRoot> {
+  title: React.ReactNode;
+  description?: React.ReactNode;
   trigger: React.ReactNode;
-
-  children: React.ReactNode;
 }
 
-export const Dialog = ({ title, description, trigger, children }: DialogProps) => (
-  <DialogRoot>
+export const Dialog = ({ title, description, trigger, children, ...rest }: DialogProps) => (
+  <DialogRoot {...rest}>
     <DialogTrigger asChild>{trigger}</DialogTrigger>
 
     <DialogContent>
       <FlexDiv column>
         <FlexDiv justifyBetween alignCenter>
-          <DialogTitle>{title}</DialogTitle>
+          <DialogTitle asChild>{title}</DialogTitle>
 
           <DialogClose asChild>
-            <Button subtle>
+            <Button icon variant="subtle">
               <FlexDiv>
                 <Cross2Icon />
               </FlexDiv>
@@ -37,10 +35,12 @@ export const Dialog = ({ title, description, trigger, children }: DialogProps) =
           </DialogClose>
         </FlexDiv>
 
-        {!!description && <DialogDescription>{description}</DialogDescription>}
+        {!!description && <DialogDescription asChild>{description}</DialogDescription>}
 
         {children}
       </FlexDiv>
     </DialogContent>
   </DialogRoot>
 );
+
+export const DialogClose = DialogPrimitive.Close;

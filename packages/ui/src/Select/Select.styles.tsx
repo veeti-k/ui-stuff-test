@@ -5,7 +5,41 @@ import { Button } from "../Button/Button";
 
 const StyledTrigger = styled(SelectPrimitive.SelectTrigger, {
   all: "unset",
-  ...Button,
+
+  appearance: "none",
+
+  color: "$hiContrast",
+
+  borderRadius: "8px",
+  padding: "0.6rem 0.7rem",
+
+  transition: "$default",
+  "-webkit-tap-highlight-color": "transparent",
+
+  "&:focus-visible": {
+    outline: "none",
+    boxShadow: `0 0 0 3px $colors$blue7`,
+  },
+
+  border: "1px solid $gray7",
+
+  "@hover": {
+    "&:hover": {
+      backgroundColor: "$gray4",
+    },
+  },
+
+  "&:active": {
+    backgroundColor: "$gray5",
+  },
+
+  variants: {
+    error: {
+      true: {
+        borderColor: "$tomato8",
+      },
+    },
+  },
 });
 
 const StyledContent = styled(SelectPrimitive.Content, {

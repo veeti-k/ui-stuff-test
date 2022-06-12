@@ -10,9 +10,11 @@ export const Input = ({ label, required, id, error, ...props }: InputProps) => {
   return (
     <FlexDiv column gap05 fullHeight>
       <FlexDiv justifyBetween alignCenter>
-        <Label htmlFor={innerId} required={required}>
-          {label}
-        </Label>
+        {!!label && (
+          <Label htmlFor={innerId} required={required}>
+            {label}
+          </Label>
+        )}
 
         {!!error && (
           <Label htmlFor={innerId} red>

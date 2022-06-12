@@ -3,6 +3,10 @@ import { styled } from "../stitches.config";
 import { Button } from "./Button";
 
 export const ButtonGroup = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+
   [`& ${Button}:first-child`]: {
     borderTopRightRadius: 0,
     borderBottomRightRadius: 0,

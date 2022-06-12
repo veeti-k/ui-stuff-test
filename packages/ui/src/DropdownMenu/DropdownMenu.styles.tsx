@@ -73,6 +73,7 @@ export const itemStyles = {
 };
 
 export const StyledItem = styled(DropdownMenuPrimitive.Item, { ...itemStyles });
+export const StyledCheckboxItem = styled(DropdownMenuPrimitive.CheckboxItem, { ...itemStyles });
 
 export const StyledLabel = styled(DropdownMenuPrimitive.Label, {
   paddingLeft: 25,

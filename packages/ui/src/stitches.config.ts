@@ -7,7 +7,9 @@ import {
   slate,
   whiteA,
   gray,
+  grayA,
   grayDark,
+  grayDarkA,
   blue,
   blueDark,
   tomato,
@@ -26,6 +28,7 @@ export const { styled, css, keyframes, globalCss, getCssText, createTheme } = cr
       ...slate,
       ...blackA,
       ...whiteA,
+      ...grayA,
       hiContrast: "$slate12",
       loContrast: "$slate1",
     },
@@ -36,6 +39,10 @@ export const { styled, css, keyframes, globalCss, getCssText, createTheme } = cr
   media: {
     hover: "(any-hover: hover)",
     motionOk: "(prefers-reduced-motion: no-preference)",
+    bp1: "(min-width: 576px)",
+    bp2: "(min-width: 768px)",
+    bp3: "(min-width: 992px)",
+    bp4: "(min-width: 1200px)",
   },
 });
 
@@ -49,6 +56,7 @@ export const darkTheme = createTheme("dark", {
     ...slate,
     ...blackA,
     ...whiteA,
+    ...grayDarkA,
     hiContrast: "$slate1",
     loContrast: "$slate12",
   },

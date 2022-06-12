@@ -10,9 +10,9 @@ import {
   AlertDialogTrigger,
 } from "./AlertDialog.styles";
 
-interface ActionDialogProps {
-  title: string;
-  description?: string;
+interface ActionDialogProps extends Omit<React.ComponentProps<typeof AlertDialogRoot>, "children"> {
+  title: React.ReactNode;
+  description?: React.ReactNode;
   trigger: React.ReactNode;
 
   cancel: React.ReactNode;

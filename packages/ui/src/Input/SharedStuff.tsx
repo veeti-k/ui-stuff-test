@@ -1,3 +1,4 @@
+import * as React from "react";
 import { styled } from "../stitches.config";
 
 export const StyledInput = styled("input", {
@@ -54,5 +55,5 @@ export const StyledInput = styled("input", {
 
 export interface InputProps extends React.ComponentProps<typeof StyledInput> {
   label?: string;
-  error?: string;
+  error?: string | React.ReactNode;
 }

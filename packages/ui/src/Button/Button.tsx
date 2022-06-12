@@ -4,11 +4,12 @@ import { styled } from "../stitches.config";
 export const Button = styled("button", {
   all: "unset",
   appearance: "none",
+  "-webkit-appearance": "none",
 
   color: "$hiContrast",
 
   borderRadius: "8px",
-  padding: "0.6rem 0.7rem",
+  padding: "0.5rem 0.7rem",
 
   transition: "$default",
   "-webkit-tap-highlight-color": "transparent",
@@ -18,9 +19,13 @@ export const Button = styled("button", {
     boxShadow: `0 0 0 3px $colors$blue7`,
   },
 
+  "&:disabled": {
+    color: "$gray7",
+  },
+
   variants: {
-    red: {
-      true: {
+    color: {
+      red: {
         color: "white",
         backgroundColor: "$red9",
 
@@ -33,10 +38,12 @@ export const Button = styled("button", {
         "&:active": {
           backgroundColor: "$red11",
         },
+
+        "&:disabled": {
+          backgroundColor: "$red5",
+        },
       },
-    },
-    green: {
-      true: {
+      green: {
         color: "white",
         backgroundColor: "$grass9",
 
@@ -49,25 +56,46 @@ export const Button = styled("button", {
         "&:active": {
           backgroundColor: "$grass11",
         },
+
+        "&:disabled": {
+          backgroundColor: "$grass5",
+        },
       },
-    },
-    subtle: {
-      true: {
-        border: "unset",
+      blue: {
+        color: "white",
+        backgroundColor: "$blue9",
 
         "@hover": {
           "&:hover": {
-            backgroundColor: "$gray3",
+            backgroundColor: "$blue10",
           },
         },
 
         "&:active": {
-          backgroundColor: "$gray4",
+          backgroundColor: "$blue11",
+        },
+
+        "&:disabled": {
+          backgroundColor: "$blue5",
         },
       },
+      default: {},
     },
-    outline: {
-      true: {
+    variant: {
+      subtle: {
+        border: "unset",
+
+        "@hover": {
+          "&:hover": {
+            backgroundColor: "$gray4",
+          },
+        },
+
+        "&:active": {
+          backgroundColor: "$gray5",
+        },
+      },
+      outline: {
         border: "1px solid $gray7",
 
         "@hover": {
@@ -81,9 +109,27 @@ export const Button = styled("button", {
         },
       },
     },
+
+    small: {
+      true: {
+        padding: "0 0.5rem",
+        height: "35px",
+        fontSize: "0.875rem",
+      },
+    },
+
+    icon: {
+      true: {
+        padding: "0.7rem",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      },
+    },
   },
 
   defaultVariants: {
-    outline: true,
+    variant: "outline",
+    color: "default",
   },
 });
